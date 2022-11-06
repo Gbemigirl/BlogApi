@@ -35,8 +35,9 @@ const CreateSchema = new mongoose.Schema({
     },
     read_time: {
         type: Number,
-    }
-})
+    },
+    timestamps: true
+});
     
 
 module.exports = mongoose.model("Create", CreateSchema)
