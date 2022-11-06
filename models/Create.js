@@ -4,17 +4,17 @@ const mongoose = require("mongoose")
 
 const CreateSchema = new mongoose.Schema({
     title:{
-        type:string,
+        type:String,
         required:true,
         unique:true
     },
     description: {
-        type:string,
+        type:String,
         required:true,
         unique:true
     },
     author: {
-        type:string,
+        type:String,
         required:true,
         unique:true
     },
@@ -23,11 +23,11 @@ const CreateSchema = new mongoose.Schema({
         required:false
     },
     body:{
-        type: string,
+        type: String,
         required: true
     },
     state: {
-        type:string,
+        type:String,
         enum:["draft", "published"], default: "draft"
     },
     read_count:{
@@ -36,8 +36,9 @@ const CreateSchema = new mongoose.Schema({
     read_time: {
         type: Number,
     },
-    timestamps: true
-});
+},
+    {timestamps: true}
+);
     
 
 module.exports = mongoose.model("Create", CreateSchema)
